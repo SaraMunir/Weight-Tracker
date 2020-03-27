@@ -22,12 +22,10 @@ async function printChart(userId){
         let datePosted = weights.date;
         let day = moment(datePosted).format('dddd');
         let date = moment(datePosted).format('l');;
-
         console.log('day: ', day)
         console.log('date: ', date)
         console.log('weight: ', weight)
         console.log('datePosted: ', datePosted)
-
     })
 }
 
