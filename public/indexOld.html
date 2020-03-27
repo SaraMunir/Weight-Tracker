@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pictures</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+</head>
+<body>
+    <style>
+        .thumbnail-size {
+            width: 30vh;
+            height: 30vh; 
+            object-fit: cover;
+        }
+    </style>
+
+    <script>
+        $(document).ready( async function(){
+
+        })
+    </script>
+    <main role="main">
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1>Weight Tracker</h1>
+                <p class="lead text-muted">Sometimes you forget how many wonderful memories you have already experienced.</p>
+            </div>
+        </section>
+        <section class="weight-graph card">
+            <div class="card-body">
+                <h3>Weight graph</h3>
+                <div class="chart">
+                    <canvas id="lineChart"></canvas>
+                </div>
+
+            </div>
+        </section>
+        <section class="daily-weight card">
+            <div class="card-body">
+                <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+
+
+            </div>
+        </section>
+    
+        <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col float-right">
+                    <a href="/add_picture.html" class="btn btn-lg btn-primary"> </a>
+                </div>
+            </div>
+            <hr />                  
+            <div class="row" id='pictureList'>
+            </div>
+        </div>
+        </div>
+    
+    </main>
+    <script>
+    window.onload = function () {
+        
+        var something = {
+            animationEnabled: true,
+            theme: "light2",
+            title:{
+                text: "Simple Line Chart"
+            },
+            axisY:{
+                includeZero: false
+            },
+            data: [{        
+                type: "line",
+                indexLabelFontSize: 16,
+                dataPoints: [
+                    { y: 555},
+                    { y: 414},
+                    { y: 520, indexLabel: "\u2191 highest",markerColor: "red", markerType: "triangle" },
+                    { y: 560 },
+                    { y: 450 },
+                    { y: 500 },
+                    { y: 480 },
+                    { y: 480 },
+                    { y: 410 , indexLabel: "\u2193 lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
+                    { y: 500 },
+                    { y: 480 },
+                    { y: 680 },
+                    { y: 680 },
+                    { y: 680 }
+                ]
+            }]
+
+            
+        };
+        var chart = new CanvasJS.Chart("chartContainer", something);
+
+
+        console.log(something.data[0].dataPoints)
+        var dontknow = something.data[0].dataPoints;
+
+        const weightList = [450, 550, 600, 300, 600, 489, 245, 1200]
+        const weightList1 = [444]
+
+        weightList.forEach( function(weights){
+            console.log('weights is: ', weights);
+            dontknow.push({y: weights})
+        })
+        // dontknow.push({y: weights})
+
+        // dontknow.forEach(function(y){
+        //     console.log(y)
+        // })
+
+    chart.render();
+
+}
+
+    </script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</body>
+</html>

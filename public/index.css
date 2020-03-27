@@ -1,0 +1,115 @@
+.thumbnail-size {
+    width: 30vh;
+    height: 30vh; 
+    object-fit: cover;
+}
+body {
+    color: white;
+    background-color: #251e3e ;
+    /* background-image: linear-gradient(45deg, #ffc3a0, #ffafbd); */
+    /* #ff9a9e → #fecfef */
+    /* #ffc3a0 → #ffafbd */
+}
+.card-D{
+    /* width: 80%; */
+    color: #251e3e ;
+    background-color: white;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.myBtn {
+    background-color:  #aa2d55;
+    width: 255px;
+    margin: 15px auto;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 30px;
+    filter: drop-shadow(1px 1px 5px #471425);
+    
+}
+.myHovr:hover {
+    background-color:  #e46990;
+    filter: drop-shadow(1px 1px 5px #ce6385);
+
+}
+.myHovr:active {
+    background-color:  #aa2d55;
+    filter: drop-shadow(1px 1px 5px black);
+
+}
+
+
+.hide {
+    display: none;
+}
+.myInpt {
+    width: 189px;
+    padding: 15px;
+    border-style: none;
+    text-align: center;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.submtWtBtn {
+    background-color:  #aa2d55;
+    width: 55px;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+
+}
+.mySpcBtn{
+    width: 250px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px auto;
+    border-radius: 30px;
+    padding: 2px;
+}
+.arrow {
+    cursor: pointer;
+    opacity: .3;
+}
+.arrow:hover {
+    opacity: 1;
+
+}
+.arrowImg {
+    margin: 12px auto;
+}
+img {
+    width: 100%;
+}
+
+.hamBrgr {
+    padding: 15px;
+    cursor: pointer;
+}
+.menuImg {
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+#closeMenu{
+    color: black;
+    cursor: pointer;
+}
+nav {
+    position: relative;
+}
+.menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+td {
+    
+}

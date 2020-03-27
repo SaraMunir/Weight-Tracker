@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weigh Tracker</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="container-fluid d-flex  justify-content-end">
+        <i class="hamBrgr fa fa-bars fa-3x" aria-hidden="true" onClick="showMenu()"></i>
+        <div class="menu hide">
+            <div class="list-group" style="width: 250px;">
+                <div class="list-group-item">
+                    <div class="d-flex justify-content-end">
+                        <i class="fa fa-times" aria-hidden="true" id="closeMenu" onclick="closeMenu()"></i>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <img class="menuImg" src="https://i.pinimg.com/originals/cc/d6/b0/ccd6b05d028d9f197b56e8d8bf5d6ee3.jpg" alt="">
+                    </div>
+                    
+                </div>
+                <a href="index.html" class="list-group-item list-group-item-action"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp; My profile</a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <i class="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp; Friends</a>
+                <a href="#" class="list-group-item list-group-item-action disabled" onclick="logOut()">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp; Logout
+                </a>
+            </div>
+        </div>
+    </nav>
+    <main role="main">
+        <section class="text-center">
+            <div class="container">
+                <h1>Weight Tracker</h1>
+                <p class="lead text-muted">“You didn’t gain all your weight in one day; you won’t lose it in one day. Be patient with yourself.”– Jenna Wolfe</p>
+            </div>
+        </section>
+        <section class="text-center">
+            <div class="container">
+                <div class="dateCarousol d-flex justify-content-center">
+                    <div class="left arrow" style="width: 50px;" onclick="leftDay()">
+                        <img src="assets/back.png" alt="left-arrow" class="arrowImg">
+                    </div>
+                    <div class="center" style="width: 250px;">
+                        <h2 id="dayName">Today</h2>
+                        <h6 class="mt-3" id="currentDate">Date</h6>
+                    </div>
+                    <div class="right arrow" style="width: 50px;" id="rightArrow" onclick="rightDay()">
+                        <img src="assets/right-arrow.png" alt="right-arrow" class="arrowImg">
+                    </div>
+                </div>
+                <div class="myBtn myHovr" onClick="showForm()">Log Weight</div>
+                <div class="hide" id="formInput">
+                    <div class="mySpcBtn">
+                        <input class="myInpt" type="number" id="myWeight" value="158"  min="1">
+                        <i class="myHovr submtWtBtn fa fa-arrow-right" aria-hidden="true" onClick="logWgtBtn()"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section >
+            <div class="container card-D" id="weightsChart" >
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">row</th>
+                            <th scope="col">Sunday</th>
+                            <th scope="col">Monday</th>
+                            <th scope="col">Tuesday</th>
+                            <th scope="col">Wednesday</th>
+                            <th scope="col">Thursday</th>
+                            <th scope="col">Friday</th>
+                            <th scope="col">Saturday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row" id="">1</th>
+                        <td id="sunday">Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td id="sunday">Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <tdi d="sunday"> Mark</tdi>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="daily-weight">
+            <div class="card-body">
+            </div>
+        </section>
+    </main>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="weightTable.js"></script>    
+</body>
+</html>
