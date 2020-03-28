@@ -65,8 +65,8 @@ async function loginUser( email, password ) {
 async function postUsersWeight(myPost){
     console.log(myPost);
     const postUserWeight = await db.query( 
-        "INSERT INTO weights_data(weight, myId, date) VALUES(?,?,?);",
-        [ myPost.weight, myPost.userId, myPost.date]);
+        "INSERT INTO weights_data(weight, myId, date, anodate) VALUES(?,?,?,?);",
+        [ myPost.weight, myPost.userId, myPost.date, myPost.anotherDate]);
     return postUserWeight;
 }
 
@@ -78,11 +78,30 @@ async function  getUserWeight( userId ){
         // console.log(` in orm the of userWeight ` + userWeight);
     return userWeight;
 }
+async function getUserWeightThatDay( weightDateObj){
+
+    // console.log("before query the orm date is ",dates);
+    let userWeightDa = await db.query( 
+        "SELECT * FROM weights_data WHERE myId = ? And anodate = ?;",
+        [ weightDateObj.userId, weightDateObj.date] );
+        // console.log(userWeightDa[0])
+        // console.log(` in orm the of userWeight ` + userWeightDa);
+
+        userWeightDa = JSON.stringify(userWeightDa); 
+        userWeightDa = JSON.parse(userWeightDa); 
+    console.log( ` userFetch:`, userWeightDa );
+
+    if( !userWeightDa ) {
+        return false;
+    }
+    return userWeightDa[0]
+}
 
 
 module.exports = {
     registrationSql,
     loginUser,
     postUsersWeight,
-    getUserWeight
+    getUserWeight,
+    getUserWeightThatDay
 }

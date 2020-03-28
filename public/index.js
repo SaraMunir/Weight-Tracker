@@ -114,7 +114,7 @@ async function updateChart(userId){
             // { x: new Date(2020, 2, 21), y: 610.5},
             // { x: new Date(2020, 2, 22), y: 608 },
             // { x: new Date(2020, 2, 23), y: 611 },
-            // { x: new Date(), y: 555}
+            // { x: new Date(), y: 555}post
         ];
         const getWeightsData = await $.get(`/api/getWeightsData/${userId}`);
         console.log('users weights are: ',getWeightsData);
@@ -180,13 +180,16 @@ async function logWgtBtn(){
     const userId= userData.userId
     const loggedWeight = $( "#myWeight" ).val();
     console.log('the logged day ', today);
-    
+
+    const anotherDate = moment(today).format('L');
+    console.log('anotherDate : ',anotherDate)
     const date = today.toJSON().slice(0, 19).replace('T', ' ');
     const userInfo = {
         userName: userName,
         userId: userId,
         weight: loggedWeight,
-        date: date
+        date: date, 
+        anotherDate: anotherDate
     }
     console.log('loggedWeight is',userInfo);
     const postWeight = await $.post( '/api/postWeight', userInfo );

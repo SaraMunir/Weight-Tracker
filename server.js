@@ -33,6 +33,23 @@ app.post("/api/registration", async function(req, res){
 })
 
 
+
+
+app.post("/api/postWeight", async function(req, res){
+    console.log(req.body);
+    const postWeight = await orm.postUsersWeight(req.body);
+    res.send({message: "Weight has been successfully logged in!!"});
+});
+
+
+app.get("/api/getWeightsData/:id", async function(req, res){
+        console.log( `[/api/getWeightsData/] recieved: `, req.params.id );
+        const usersWeight = await orm.getUserWeight(req.params.id);
+        console.log(usersWeight)
+        res.send(usersWeight);
+    
+    });
+
 //checks the validation of user - if they exist in db or not
 app.post("/api/checkuser", async function(req, res){
     console.log(req.body)
@@ -48,20 +65,18 @@ app.post("/api/checkuser", async function(req, res){
 });
 
 
-app.post("/api/postWeight", async function(req, res){
-    console.log(req.body);
-    const postWeight = await orm.postUsersWeight(req.body);
-    res.send({message: "Weight has been successfully logged in!!"});
-});
+app.post("/api/getWeightforThatDay", async function(req, res){
+        // console.log( `[/api/getWeightsData/] recieved: `, req.params.id );
+        const usersWeightThatDay = await orm.getUserWeightThatDay((req.body));
+        console.log('in server file the received weight is ',usersWeightThatDay)
+        // res.send(usersWeightThatDay);
 
-
-app.get("/api/getWeightsData/:id", async function(req, res){
-    console.log( `[/api/getWeightsData/] recieved: `, req.params.id );
-    const usersWeight = await orm.getUserWeight(req.params.id);
-    console.log(usersWeight)
-    res.send(usersWeight);
-    
-  });
+        if(!usersWeightThatDay){
+            res.send( { weight: '' } );
+            }
+            res.send(usersWeightThatDay);
+                
+    });
 
 
 
@@ -72,4 +87,4 @@ app.get("/api/getWeightsData/:id", async function(req, res){
 
 app.listen(PORT, function () {
     console.log(`[fitness_app] RUNNING, http://localhost:${PORT}`);
-  });
+    });

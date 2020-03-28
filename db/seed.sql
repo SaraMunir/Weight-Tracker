@@ -28,6 +28,7 @@ CREATE TABLE weights_data(
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     weight DECIMAL(6,2),
     date VARCHAR(500),
+    anodate VARCHAR(500),
     createdAt TIMESTAMP not null default CURRENT_TIMESTAMP,
     myId INT,
     FOREIGN KEY (myId) REFERENCES login_credential(id)
@@ -42,3 +43,4 @@ INSERT INTO weights_data(weight, myId, date) VALUES(520.54, 1, "2020-03-18 02:10
 INSERT INTO weights_data(weight, myId, date) VALUES(518.12, 1, "2020-03-17 02:10:09");
 INSERT INTO weights_data(weight, myId, date) VALUES(519.15, 1, "2020-03-16 02:10:09");
 SELECT * FROM weights_data WHERE myId = 1 ORDER BY date ASC;
+SELECT * FROM weights_data WHERE myId = 1 And date = '03/13/2020';
