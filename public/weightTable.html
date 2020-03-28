@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="weightTable.css">
 </head>
 <body>
     <nav class="container-fluid d-flex  justify-content-end">
@@ -129,6 +130,36 @@
             <div class="card-body">
             </div>
         </section>
+        <section class="monthly-calendar">
+            <div class="container">
+                <div class="card-body text-center">
+                    <div class="month">
+                        <div class="monthName d-flex justify-content-center">
+                            <div class="left arrow" style="width: 50px;" onclick="leftMonth()">
+                                <img src="assets/back.png" alt="left-arrow" class="arrowImg">
+                            </div>
+                            <div class="center" style="width: 250px;">
+                                <h2 id="monthName">April</h2>
+                            </div>
+                            <div class="right arrow" style="width: 50px;" onclick="rightMonth()">
+                                <img src="assets/right-arrow.png" alt="right-arrow" class="arrowImg">
+                            </div>
+                        </div>
+                        <div class="monthDays">
+                            <div class="daysBox">
+                                <div class="d-flex justify-content-around">
+                                    <h3 class="dateFont">1</h3>
+                                    <h6>Wed</h6>
+                                </div>
+                                <p>weight 178</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="weightTable.js"></script>    

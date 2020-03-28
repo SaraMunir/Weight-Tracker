@@ -6,7 +6,7 @@
 body {
     color: white;
     background-color: #251e3e ;
-    /* background-image: linear-gradient(45deg, #ffc3a0, #ffafbd); */
+    background-image: linear-gradient(#251e3e 60%, #493166);
     /* #ff9a9e → #fecfef */
     /* #ffc3a0 → #ffafbd */
 }

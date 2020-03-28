@@ -1,7 +1,6 @@
 var today = new Date();
 console.log(today);
 
-
 let userData = localStorage.getItem("myUser");
     userData = JSON.parse(userData);
 console.log(userData.userName);
@@ -14,9 +13,7 @@ $(document).ready( async function(){
     currentDay = moment(today).format('dddd'); ;
     console.log('currentDate is',currentDate);
     $('#currentDate').html(currentDay +', ' + currentDate);
-    
     updateChart(userId);
-    
 })
 async function updateChart(userId){
     

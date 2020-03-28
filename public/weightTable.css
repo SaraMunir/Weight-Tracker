@@ -1,0 +1,34 @@
+.month {
+    background-image: linear-gradient(90deg,rgb(248, 117, 139), rgb(255, 117, 98)
+    );
+    /* width: 80%; */
+    border-radius: 10px;
+    padding: 20px;
+}
+.monthName  {
+    font-size: 1.6rem;
+}
+.monthName h3 {
+    font-size: 2rem;
+}
+.monthDays{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.daysBox {
+    background: rgba(255, 255, 255, 0.863);
+    color: rgb(216, 77, 100);
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    margin: 2px;
+    /* font-size: 1rem; */
+    border-radius: 5px;
+    /* align-content: center; */
+}
+.dateFont {
+    font-size: 2.5rem;
+    /* font-weight: bolder; */
+}
